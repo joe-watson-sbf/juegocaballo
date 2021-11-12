@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.bg-config{
+  background-color: blueviolet;
+}
+
+.pr-1{
+  padding-right: 1em;
+}
+
+.mr-1 {
+  margin-right: 5px;
+}
+
+.mr-3{
+  margin-right: 3em;
+}
+
+.bg-image{
+  background-image: url("resources/campomedianotransparente.png");
+  height: 768px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #C3BDE9;
+}
+
+.pi-jinete{
+  margin-left: 150px;
+  display: none;
+}
+
+.textdark-bgwhite{
+  color: black;
+  background-color: white;
+}
+
+.textwhite-bgdark{
+  color: white;
+  background-color: black;
+}
+
+.span-fix {
+  display: inline-block;
+  width: 180px;
+}
+
+.ilb {
+  display: inline-block;
+}
+
+.c-button{
+  background-color: #4B1874;
+  color: white;
+}
+
+.c-button:hover{
+  background-color: white;
+  color: #4B1874;
+}
