@@ -1,6 +1,9 @@
 package co.com.sofkau.juegocaballo.usecase.validator;
 
+import co.com.sofkau.juegocaballo.domain.entity.Jinete;
 import co.com.sofkau.juegocaballo.domain.entity.Juego;
+
+import java.util.Objects;
 
 public class JuegoValidator {
 
@@ -13,6 +16,22 @@ public class JuegoValidator {
 
         if(pistaIsNotOk(juego)){
             throw new IllegalArgumentException("Las cantidades de kilometros deben ser mayor a 0!!!");
+        }
+        validarJinetes(juego);
+    }
+
+    private static void validarJinetes(Juego juego){
+        juego.jinetes()
+                .forEach(JuegoValidator::nonNullDataJinete);
+    }
+
+    private static void nonNullDataJinete(Jinete jinete){
+
+        if(jinete.nombre().isBlank()){
+            throw new IllegalArgumentException("Nombre del jinete no puede ser vacio!!!");
+        }
+        if(jinete.colorCaballo().isBlank()){
+            throw new IllegalArgumentException("Color del caballo es obligatorio!!!");
         }
     }
 

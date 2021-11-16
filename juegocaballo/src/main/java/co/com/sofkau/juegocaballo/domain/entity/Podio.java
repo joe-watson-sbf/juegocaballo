@@ -71,12 +71,10 @@ public class Podio {
 
     @Override
     public String toString() {
-        return "{" +
-                "primerLugar:" + primerLugar +
-                ", segundoLugar:" + segundoLugar +
-                ", tercerLugar:" + tercerLugar +
+        return "Podio{" +
+                "primerLugar=" + primerLugar +
+                ", segundoLugar=" + segundoLugar +
+                ", tercerLugar=" + tercerLugar +
                 '}';
     }
-
-
 }

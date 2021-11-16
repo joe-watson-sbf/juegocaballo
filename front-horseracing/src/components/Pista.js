@@ -6,15 +6,17 @@ import { execLoading, execSuccess } from '../actions/juegoActions'
 
 const Pista = ({dispatch, jugando, jinetes, loading, podio}) => {
 
-    var socket = new WebSocket("ws://localhost:8080/progress");
+    var socket = new WebSocket("ws://localhost:8080/iniciar");
     socket.onmessage = onMessage;
 
-    function onMessage(event) {
+    
 
+    function onMessage(event) {
+        socket.send("test");
         //Podemos obtener los id de los botones y deshabilitarlos
         //var btnSubmit = document.getElementById("btnSubmit");
         //btnSubmit.disabled = true;
-
+        console.log("EL EVENTO: " , event)
         var data = JSON.parse(event.data); //Obtenemos el objeto json
         console.log(data);
 
@@ -42,8 +44,7 @@ const Pista = ({dispatch, jugando, jinetes, loading, podio}) => {
         
         //Mostramos un alert con los ganadores, los cuales se almacenan en podio
        }
-
-    }, [loading]);
+    }, [loading, jugando, podio]);
 
     useEffect(() => {
         // Actualiza el título del documento usando la API del navegador
@@ -90,11 +91,11 @@ const Pista = ({dispatch, jugando, jinetes, loading, podio}) => {
                 <span>{jinetes.jugador4 == null? '' : jinetes.jugador4.nombre}</span><br />
                 <span>{jinetes.jugador5 == null? '' : jinetes.jugador5.nombre}</span><br />
                 */}
-                <img src={jinete} width="150" className="pi-jinete" id="j1"/><br />
-                <img src={jinete} width="150" className="pi-jinete" id="j2"/><br />
-                <img src={jinete} width="150" className="pi-jinete" id="j3"/><br />
-                <img src={jinete} width="150" className="pi-jinete" id="j4"/><br />
-                <img src={jinete} width="150" className="pi-jinete" id="j5"/><br />
+                <img alt='image1' src={jinete} width="150" className="pi-jinete" id="j1"/><br />
+                <img alt='image2' src={jinete} width="150" className="pi-jinete" id="j2"/><br />
+                <img alt='image3' src={jinete} width="150" className="pi-jinete" id="j3"/><br />
+                <img alt='image4' src={jinete} width="150" className="pi-jinete" id="j4"/><br />
+                <img alt='image5' src={jinete} width="150" className="pi-jinete" id="j5"/><br />
 
                 <button onClick={() => console.log(jinetes)}>Mostrar jinetes</button>
             </div>

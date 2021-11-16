@@ -56,12 +56,9 @@ public class Pista {
 
     @Override
     public String toString() {
-        return "{" +
-                "kilometros:" + kilometros +
-                ", numeroCarriles:" + numeroCarriles +
+        return "Pista{" +
+                "kilometros=" + kilometros +
+                ", numeroCarriles=" + numeroCarriles +
                 '}';
     }
-
-
-
 }

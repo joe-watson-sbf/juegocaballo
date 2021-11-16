@@ -4,10 +4,12 @@ import java.io.Serializable;
 
 public class IniciarJuegoCommand implements Serializable {
 
+    private String tipo;
     private String idJuego;
 
     public IniciarJuegoCommand(String idJuego) {
         this.idJuego = idJuego;
+        this.tipo = "IniciarJuegoCommand";
     }
 
     public String getIdJuego() {
@@ -17,4 +19,9 @@ public class IniciarJuegoCommand implements Serializable {
     public void setIdJuego(String idJuego) {
         this.idJuego = idJuego;
     }
+
+    public String getTipo() {
+        return tipo;
+    }
+
 }

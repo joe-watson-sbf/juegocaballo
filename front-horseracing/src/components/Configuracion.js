@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 
 const Configuracion = ({dispatch, jugando, jinetes, loading, kmpista}) => {
 
-    const [color, setColor] = useState('azul');
+    const [colorCaballo, setColor] = useState('azul');
     const [km, setKm] = useState(kmpista);
 
     const onAdd = () => {
         let nombre = document.getElementById('jugador').value;
         document.getElementById('jugador').value = '';
-        dispatch(addJinete({nombre, color}));
+        dispatch(addJinete({nombre, colorCaballo}));
         //console.log(jinetes)
     }
 
@@ -25,6 +25,7 @@ const Configuracion = ({dispatch, jugando, jinetes, loading, kmpista}) => {
         }
 
         dispatch(sendDataToStart({kilometros: kmSelected, jinetes }));
+        
         //dispatch(startGame());
     }
 
@@ -43,6 +44,8 @@ const Configuracion = ({dispatch, jugando, jinetes, loading, kmpista}) => {
                 break;
             case 'km50':
                 copyKm.km50 = true;
+                break;
+            default:
                 break;
         }
         //console.log(copyKm);

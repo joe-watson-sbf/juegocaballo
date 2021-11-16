@@ -14,7 +14,7 @@ public class CrearJuegoUseCaseHandle {
     }
 
     @EventListener
-    public String handle(CrearJuegoCommand command){
-        return useCase.apply(command);
+    public void handle(CrearJuegoCommand command){
+         useCase.apply(command);
     }
 }

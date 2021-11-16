@@ -6,7 +6,6 @@ import co.com.sofkau.juegocaballo.usecase.port.JuegoRepository;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
-import org.springframework.data.mongodb.core.query.UpdateDefinition;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
@@ -37,12 +36,13 @@ public class MongoJuegoRepository implements JuegoRepository {
 
     @Override
     public String save(Juego juego) {
+        System.out.println("A GUARDAR ---> " + toDocumento(juego));
         var juegoDocumento = mongoTemplate.save(toDocumento(juego), "game");
         return juegoDocumento.getId();
     }
 
     @Override
-    public Object update(Juego juego) {
+    public Juego update(Juego juego) {
         Query query = new Query(Criteria.where("_id").is(juego.id()));
 
         var data = mongoTemplate.updateMulti(query,

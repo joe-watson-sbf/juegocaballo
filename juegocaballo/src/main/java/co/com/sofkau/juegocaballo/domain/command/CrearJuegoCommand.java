@@ -41,4 +41,12 @@ public class CrearJuegoCommand implements Serializable {
         this.tipo = tipo;
     }
 
+    @Override
+    public String toString() {
+        return "CrearJuegoCommand{" +
+                "jinetes=" + jinetes +
+                ", kilometros=" + kilometros +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
 }
